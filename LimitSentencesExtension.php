@@ -6,7 +6,11 @@
  * LimitSentences method from Silverstripe is only cutting sentences which ends only with a '.'
  * This method cuts also sentences which ends with '.?!'
  * 
- * it's free to use
+ * HOWTO:
+ * copy this file into the mysite/code folder and
+ * 
+ * add Object::add_extension('Text', 'TextExtension'); to mysite/_config.php
+ * 
  */
 
 

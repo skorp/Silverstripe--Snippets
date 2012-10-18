@@ -11,6 +11,9 @@
  * 
  * add Object::add_extension('Text', 'LimitSentencesExtension'); to mysite/_config.php
  * 
+ * Template: 
+ * $Content.LimitSen(3)
+ * 
  */
 
 

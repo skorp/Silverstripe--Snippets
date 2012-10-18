@@ -9,7 +9,7 @@
  * HOWTO:
  * copy this file into the mysite/code folder and
  * 
- * add Object::add_extension('Text', 'TextExtension'); to mysite/_config.php
+ * add Object::add_extension('Text', 'LimitSentencesExtension'); to mysite/_config.php
  * 
  */
 

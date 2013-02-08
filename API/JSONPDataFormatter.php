@@ -1,5 +1,8 @@
 <?php
 /*
+ * Author: Kadir Özdemir
+ * email: admin@skorp.eu
+ * 
  * So you can send also jsonp requests to the the RestfulServer
  * 
  * @example:

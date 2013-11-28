@@ -1,6 +1,6 @@
 #### rename all table names to uppercase
 ### ` are needed to escape mysql keywords f.e. Group
-
+1.
 select
 concat('rename table `', table_name, '` to `' ,
 if(locate('_',table_name)>0 ,
@@ -9,7 +9,10 @@ Concat(UCASE(MID(table_name,1,1)),MID(table_name,2))) , '`;')
 from information_schema.`TABLES`
 where TABLE_SCHEMA='<your-table-name>'
 
+2.
+run the output of this query ^^
 
+3.
 ##USERFORMS MODULE
 ALTER TABLE `Submittedfilefield` RENAME `SubmittedFileField`
 ALTER TABLE `Submittedformfield` RENAME `SubmittedFormField`

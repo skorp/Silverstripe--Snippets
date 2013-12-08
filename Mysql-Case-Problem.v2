@@ -1,0 +1,62 @@
+#### rename all table names to uppercase
+### ` are needed to escape mysql keywords f.e. Group
+1.
+select
+concat('rename table `', table_name, '` to `' ,
+if(locate('_',table_name)>0 ,
+Concat(UCASE(MID(table_name,1,1)),MID(table_name,2,((locate('_',table_name)-1))),UCASE(MID(table_name,(locate('_',table_name)+1),1)),MID(table_name,(locate('_',table_name)+2))),
+Concat(UCASE(MID(table_name,1,1)),MID(table_name,2))) , '`;')
+from information_schema.`TABLES`
+where TABLE_SCHEMA='<your-table-name>'
+
+2.
+run the output of this query ^^
+
+3.
+##USERFORMS MODULE
+RENAME TABLE `Submittedfilefield` TO `SubmittedFileField`
+RENAME TABLE `Submittedformfield` TO `SubmittedFormField`
+RENAME TABLE `Submittedform` TO `SubmittedForm`
+RENAME TABLE `Editableoption_Versions` TO `EditableOption_versions`
+RENAME TABLE `Editableoption_Live` TO `EditableOption_Live`
+RENAME TABLE `Editableoption` TO `EditableOption`
+RENAME TABLE `Editableformfield_Versions` TO `EditableFormField_versions`
+RENAME TABLE `Editableformfield_Live` TO `EditableFormField_Live`
+RENAME TABLE `Editableformfield` TO `EditableFormField`
+RENAME TABLE `Userdefinedform_EmailRecipient` TO `UserDefinedForm_EmailRecipient`
+RENAME TABLE `Userdefinedform_Emailrecipient` TO `Userdefinedform_EmailRecipient`
+RENAME TABLE `Userdefinedform_Versions` TO `UserDefinedForm_versions`
+RENAME TABLE `Userdefinedform_Live` TO `UserFefinedForm_Live`
+RENAME TABLE `Userdefinedform` TO `UserDefinedForm`
+
+##SILVERSTRIPE
+RENAME TABLE `Virtualpage_Versions` TO `VirtualPage_versions`
+RENAME TABLE `Virtualpage_Live` TO `VirtualPage_Live`
+RENAME TABLE `Virtualpage` TO `VirtualPage`
+RENAME TABLE `Redirectorpage_Versions` TO `RedirectorPage_versions`
+RENAME TABLE `Redirectorpage_Live` TO `RedirectorPage_Live`
+RENAME TABLE `Redirectorpage` TO `RedirectorPage`
+RENAME TABLE `Errorpage_Versions` TO `ErrorPage_versions`
+RENAME TABLE `Errorpage_Live` TO `ErrorPage_Live`
+RENAME TABLE `Errorpage` TO `ErrorPage`
+RENAME TABLE `Page_Versions` TO `Page_versions`
+RENAME TABLE `SiteTree_Versions` TO `SiteTree_versions`
+RENAME TABLE `Sitetree_Viewergroups` TO `SiteTree_ViewerGroups`
+RENAME TABLE `Sitetree_Versions` TO `SiteTree_Versions`
+RENAME TABLE `Sitetree_Live` TO `SiteTree_Live`
+RENAME TABLE `Sitetree_LinkTracking` TO `SiteTree_LinkTracking`
+RENAME TABLE `Sitetree_Imagetracking` TO `SiteTree_ImageTracking`
+RENAME TABLE `Sitetree_Editorgroups` TO `SiteTree_EditorGroups`
+RENAME TABLE `Sitetree` TO `SiteTree`
+RENAME TABLE `SiteConfig_Editorgroups` TO `SiteConfig_EditorGroups`
+RENAME TABLE `Siteconfig_Viewergroups` TO `SiteConfig_ViewerGroups`
+RENAME TABLE `Siteconfig_Editorgroups` TO `SiteConfig_Editorgroups`
+RENAME TABLE `Siteconfig` TO `SiteConfig`
+RENAME TABLE `Permissionrolecode` TO `PermissionRoleCode`
+RENAME TABLE `Permissionrole` TO `PermissionRole`
+RENAME TABLE `Memberpassword` TO `MemberPassword`
+RENAME TABLE `Loginattempt` TO `LoginAttempt`
+
+## PRIVATE
+RENAME TABLE `Siteconfig_Createtoplevelgroups` TO `SiteConfig_CreateTopLevelGroups`
+RENAME TABLE `Leistungobjects` TO `LeistungObjects`
